@@ -14,9 +14,8 @@ class ProgramController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(): Response
     {
-        return $this->render('program/index.html.twig', [
-
-            'website' => 'Wild Series',
+        return $this->render('program/index.html.twig',
+        ['website' => 'Wild Series',
 
         ]);
     }
