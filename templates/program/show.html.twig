@@ -9,9 +9,10 @@
             <div class="media-body">
                 <h3 class="mt-0">{{ season.number }} - {{season.year}}</h3>
                 <p>{{season.description}}</p>
+                <a href="{{ path("program_season_show", { programId: program.id , seasonId: season.id } ) }}">Voir les episodes</a>
             </div>
-    {% endfor %}
-
+        {% endfor %}
+    </div>
     <a href="{{ path('program_index') }}">
         Retour à la liste des programmes
     </a>
