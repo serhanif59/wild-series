@@ -33,7 +33,7 @@ class ProgramController extends AbstractController
     public function show(Program $program): Response
     {
         $seasons = $program->getSeasons();
-        if (!$program) {
+        if (!$seasons) {
             throw $this->createNotFoundException(
                 'No program with found in program\'s table.'
             );
