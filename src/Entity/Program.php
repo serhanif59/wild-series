@@ -7,8 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: ProgramRepository::class)]
+#[Assert\EnableAutoMapping]
+#[UniqueEntity('title' ,message: 'Ce titre existe déjà.')]
 class Program
 {
     #[ORM\Id]
@@ -20,6 +24,7 @@ class Program
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\Regex('/plus belle la vie/', match : false, message :'Serie interdite sur ce site')]
     private ?string $synopsys = null;
 
     #[ORM\Column(length: 255, nullable: true)]
