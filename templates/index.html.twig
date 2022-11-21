@@ -5,4 +5,11 @@
 
 {% block body %}
 	<h1>Bienvenue dans Wild Series</h1>
+
+	<a href="{{ path('app_season_index') }}">
+        Gestion des saisons
+    </a><br>
+	<a href="{{ path('app_episode_index') }}">
+        Gestion des Episodes
+    </a>
 {% endblock %}
