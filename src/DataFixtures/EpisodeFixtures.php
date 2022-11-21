@@ -13,8 +13,8 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create();
-        for ($k = 1; $k<4; $k++) {
-            for ($i = 1; $i<=10; $i++) {
+        for ($k = 1; $k < 4; $k++) {
+            for ($i = 1; $i <= 10; $i++) {
                 $episode = new Episode();
                 $episode->setNumber($i);
                 $episode->setTitle($faker->word());
@@ -25,12 +25,12 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
         }
         $manager->flush();
     }
-    
+
     public function getDependencies()
     {
         // Tu retournes ici toutes les classes de fixtures dont EpisodeFixtures dépend
         return [
-          SeasonFixtures::class,
+            SeasonFixtures::class,
         ];
     }
 }
