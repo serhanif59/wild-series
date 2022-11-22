@@ -3,3 +3,8 @@
 body {
   background-color: rgb(149, 170, 30);
 }
+form div div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
